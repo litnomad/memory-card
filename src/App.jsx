@@ -1,6 +1,28 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./App.css";
 import { initialData, shuffle } from "./data";
+
+function Image({ term, handleClick }) {
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    fetch(
+      `https://api.giphy.com/v1/gifs/translate?api_key=cjgVFDEd1F5mInM4Xg7sboKwnPM6Wmjc&s=${term}`,
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        setImage("background-image: ", response.data.images.fixed_width.url);
+      });
+  }, [term]);
+
+  return (
+    <>
+      <button id={term} onClick={handleClick} style={image}></button>
+    </>
+  );
+}
 
 function App() {
   const [score, setScore] = useState(0);
@@ -33,9 +55,6 @@ function App() {
     }
   }
 
-  console.log("after set score", score);
-  console.log("after set cards", cards);
-
   shuffle(cards);
 
   return (
@@ -47,9 +66,11 @@ function App() {
       <div className="cards">
         {cards.map((card) => {
           return (
-            <button key={card.term} id={card.term} onClick={handleClick}>
-              {card.term}
-            </button>
+            <Image
+              key={card.term}
+              term={card.term}
+              handleClick={handleClick}
+            ></Image>
           );
         })}
       </div>

@@ -1,138 +1,73 @@
 export const initialData = [
   {
     id: 1,
-    term: "moon",
-    img: () => {
-      const data = "moon";
-      let fetchResult;
-
-      fetch(
-        `https://api.giphy.com/v1/gifs/random/api_key=KH2vrIo53DTpqDgTI371yMGIFgZRVvSu/tag=${data}`,
-      ).then((response) => {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        fetchResult = response.json();
-      });
-
-      console.log(fetchResult);
-      return fetchResult;
-    },
+    term: "moon tarot",
     hasClicked: false,
   },
   {
     id: 2,
-    term: "sun",
-    img: () => {
-      const data = "sun";
-      let fetchResult;
-
-      fetch(
-        `https://api.giphy.com/v1/gifs/random/api_key=KH2vrIo53DTpqDgTI371yMGIFgZRVvSu/tag=${data}`,
-      ).then((response) => {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        fetchResult = response.json();
-      });
-
-      console.log(fetchResult);
-      return fetchResult;
-    },
+    term: "sun tarot",
     hasClicked: false,
   },
   {
     id: 3,
-    term: "star",
-    img: () => {
-      const data = "star";
-      let fetchResult;
-
-      fetch(
-        `https://api.giphy.com/v1/gifs/random/api_key=KH2vrIo53DTpqDgTI371yMGIFgZRVvSu/tag=${data}`,
-      ).then((response) => {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        fetchResult = response.json();
-      });
-
-      console.log(fetchResult);
-      return fetchResult;
-    },
+    term: "star tarot",
     hasClicked: false,
   },
   {
     id: 4,
-    term: "devil",
-    img: () => {
-      const data = "devil";
-      let fetchResult;
-
-      fetch(
-        `https://api.giphy.com/v1/gifs/random/api_key=KH2vrIo53DTpqDgTI371yMGIFgZRVvSu/tag=${data}`,
-      ).then((response) => {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        fetchResult = response.json();
-      });
-
-      console.log(fetchResult);
-      return fetchResult;
-    },
+    term: "devil tarot",
     hasClicked: false,
   },
   {
     id: 5,
-    term: "world",
-    img: () => {
-      const data = "world";
-      let fetchResult;
-
-      fetch(
-        `https://api.giphy.com/v1/gifs/random/api_key=KH2vrIo53DTpqDgTI371yMGIFgZRVvSu/tag=${data}`,
-      ).then((response) => {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        fetchResult = response.json();
-      });
-
-      console.log(fetchResult);
-      return fetchResult;
-    },
+    term: "world tarot",
     hasClicked: false,
   },
   {
     id: 6,
-    term: "fool",
-    img: () => {
-      const data = "fool";
-      let fetchResult;
-
-      fetch(
-        `https://api.giphy.com/v1/gifs/random/api_key=KH2vrIo53DTpqDgTI371yMGIFgZRVvSu/tag=${data}`,
-      ).then((response) => {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        fetchResult = response.json();
-      });
-
-      console.log(fetchResult);
-      return fetchResult;
-    },
+    term: "fool tarot",
+    hasClicked: false,
+  },
+  {
+    id: 7,
+    term: "justice tarot",
+    hasClicked: false,
+  },
+  {
+    id: 8,
+    term: "priestess tarot",
+    hasClicked: false,
+  },
+  {
+    id: 9,
+    term: "tower tarot",
+    hasClicked: false,
+  },
+  {
+    id: 10,
+    term: "wheel tarot",
+    hasClicked: false,
+  },
+  {
+    id: 11,
+    term: "judgement tarot",
+    hasClicked: false,
+  },
+  {
+    id: 12,
+    term: "lovers tarot",
     hasClicked: false,
   },
 ];
 
 export function shuffle(array) {
-  let m = array.length, t, i;
+  let m = array.length,
+    t,
+    i;
 
   // While there remain elements to shuffle…
   while (m) {
-
     // Pick a remaining element…
     i = Math.floor(Math.random() * m--);
 
