@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import "./App.css";
-import { initialData } from "./data";
+import { initialData, shuffle } from "./data";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -35,6 +35,8 @@ function App() {
 
   console.log("after set score", score);
   console.log("after set cards", cards);
+
+  shuffle(cards);
 
   return (
     <div className="container">
