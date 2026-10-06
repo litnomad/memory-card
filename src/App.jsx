@@ -59,6 +59,13 @@ function App() {
 
   return (
     <div className="container">
+      <header>
+        <h1>Memory Card</h1>
+        <p>
+          Get points by clicking on an image but don't click on any more than
+          once!
+        </p>
+      </header>
       <div className="score">
         <p>Score: {score}</p>
         <p>Best Score: {bestScore}</p>
