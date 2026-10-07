@@ -13,13 +13,17 @@ function Image({ term, handleClick }) {
         return response.json();
       })
       .then((response) => {
-        setImage("background-image: ", response.data.images.fixed_width.url);
+        setImage(response.data.images.fixed_width.url);
       });
   }, [term]);
 
   return (
     <>
-      <button id={term} onClick={handleClick} style={image}></button>
+      <button
+        id={term}
+        onClick={handleClick}
+        style={{ backgroundImage: "url(" + image + ")" }}
+      ></button>
     </>
   );
 }
