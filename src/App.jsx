@@ -47,8 +47,8 @@ function App() {
         }),
       );
       setScore(score + 1);
+      setCards(shuffle(cards));
     } else {
-      console.log("score", score, ">", reference.current, "?");
       if (score > reference.current) {
         reference.current = score;
         setBestscore(score);
@@ -58,8 +58,6 @@ function App() {
       setScore(0);
     }
   }
-
-  shuffle(cards);
 
   return (
     <div className="container">
